@@ -215,7 +215,7 @@ function openRead(id){var a=JSON.parse(localStorage.getItem('y')||'[]');var y=nu
 function toggleEdit(){var hv=document.getElementById('readHeadView');var he=document.getElementById('readHead');var tv=document.getElementById('readTextView');var te=document.getElementById('readTextEdit');var sb=document.getElementById('saveEditBtn');var isEditing=he.style.display!=='none';if(!isEditing){hv.style.display='none';tv.style.display='none';he.style.display='block';te.style.display='block';sb.style.display='block';}else{hv.style.display='block';tv.style.display='block';he.style.display='none';te.style.display='none';sb.style.display='none';}}
 function saveEdited(){var a=JSON.parse(localStorage.getItem('y')||'[]');for(var i=0;i<a.length;i++) if(a[i].id===currentReadId){a[i].heading=document.getElementById('readHead').value;a[i].text=document.getElementById('readTextEdit').value;break;}localStorage.setItem('y',JSON.stringify(a));var hv=document.getElementById('readHeadView');hv.innerText=document.getElementById('readHead').value;document.getElementById('readTextView').innerText=document.getElementById('readTextEdit').value;toggleEdit();loadY();showToast('Updated');}
 function closeRead(){document.getElementById('readModal').classList.remove('show');}
-function showToast(msg){var t=document.getElementById('toast');t.innerText=msg;t.style.display='block';setTimeout(function(){t.style.display='none';},2500);}
+function showToast(msg){ return; }
 function saveNameFromInside(){var n=document.getElementById('newNameInside').value.trim();if(!n){alert('Enter name!');return;}if(n.toLowerCase()==='all'){alert('Cannot use All!');return;}var saved=JSON.parse(localStorage.getItem('savedNames')||'[]');for(var i=0;i<saved.length;i++) if(saved[i].toLowerCase()===n.toLowerCase()){showToast('Already exists');return;}saved.push(n);localStorage.setItem('savedNames',JSON.stringify(saved));document.getElementById('newNameInside').value='';refreshNameDropdown();loadAcc();loadAccNames();showToast('Saved: '+n);}
 function refreshNameDropdown(){var saved=JSON.parse(localStorage.getItem('savedNames')||'[]');var cont=document.getElementById('savedNamesContainer');if(!cont) return;cont.innerHTML='';for(var i=0;i<saved.length;i++){(function(name){var div=document.createElement('div');div.className='name-item';div.innerHTML='<span style="flex:1;display:flex;align-items:center;gap:10px;min-width:0" onclick="selectName(\''+name.replace(/'/g,"\\'")+'\')"><span style="width:32px;height:32px;border-radius:10px;background:linear-gradient(135deg, #e0f2fe, #bae6fd);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px">👤</span><span style="font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:120px;font-size:13px">'+name+'</span></span><button class="delNameBtn" onclick="event.stopPropagation();deleteName(\''+name.replace(/'/g,"\\'")+'\')">✕</button>';cont.appendChild(div);})(saved[i]);}if(saved.length>0){var allDiv=document.createElement('div');allDiv.className='name-item all';allDiv.innerHTML='<span style="flex:1;display:flex;align-items:center;gap:8px" onclick="selectName(\'All\')"><span style="width:32px;height:32px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0">🌟</span><span>ALL۔۔👤</span></span>';cont.appendChild(allDiv);}if(saved.length===0){cont.innerHTML='<div style="padding:14px;text-align:center;color:#94a3b8;font-size:12px">No names..</div>';}}
 function toggleNameDropdown(){var dd=document.getElementById('nameDropdown');var dd2=document.getElementById('detailsDropdown');if(dd2) dd2.classList.remove('show');dd.classList.toggle('show');if(dd.classList.contains('show')) refreshNameDropdown();}
@@ -259,7 +259,6 @@ function selectAccType(type){
   if(s) s.classList.remove('active');
   if(type==='receive' && r) r.classList.add('active');
   if(type==='send' && s) s.classList.add('active');
-  showToast(type==='receive' ? 'Receive selected - ab SAVE dabao' : 'Send selected - ab SAVE dabao');
 }
 function doFinalSave(){
   saveDirect(lastSaveType);
@@ -334,10 +333,33 @@ async function downloadAllNamesPDF(){
   await makePdfFromDiv(html,'HISAB-All-Names.pdf');
 }
 async function downloadPersonPDF(){
-  var name=currentHistoryName; var acc=JSON.parse(localStorage.getItem('acc')||'[]').filter(x=>x.name===name).sort((a,b)=>a.ts-b.ts);
-  var bal=0; var rows=''; for(var i=0;i<acc.length;i++){ bal+= acc[i].type==='liye'?acc[i].amount:-acc[i].amount; var d=new Date(acc[i].ts); var dateStr=(d.getMonth()+1)+'/'+d.getDate()+'/'+String(d.getFullYear()).slice(-2); rows+='<tr><td style="padding:8px;border:1px solid #e2e8f0;text-align:center">'+dateStr+'</td><td style="padding:8px;border:1px solid #e2e8f0">'+(acc[i].details||'-')+'</td><td style="padding:8px;border:1px solid #e2e8f0;text-align:center;color:'+(acc[i].type==='diye'?'#ef4444':'#cbd5e1')+'">'+(acc[i].type==='diye'?acc[i].amount:'-')+'</td><td style="padding:8px;border:1px solid #e2e8f0;text-align:center;color:'+(acc[i].type==='liye'?'#16a34a':'#cbd5e1')+'">'+(acc[i].type==='liye'?acc[i].amount:'-')+'</td><td style="padding:8px;border:1px solid #e2e8f0;text-align:center;font-weight:900">'+bal+'</td></tr>'; }
-  var html='<div style="padding:20px"><h2 style="text-align:center">'+name+' - History</h2><table style="width:100%;border-collapse:collapse;margin-top:12px"><tr style="background:#f8fafc"><th style="padding:8px;border:1px solid #e2e8f0">DATE</th><th style="padding:8px;border:1px solid #e2e8f0">DETAILS</th><th style="padding:8px;border:1px solid #e2e8f0">SEND</th><th style="padding:8px;border:1px solid #e2e8f0">RECEIVE</th><th style="padding:8px;border:1px solid #e2e8f0">BAL</th></tr>'+rows+'</table></div>';
-  await makePdfFromDiv(html, name+'-History.pdf');
+  if(!currentHistoryName) return;
+  var acc=JSON.parse(localStorage.getItem('acc')||'[]');
+  var filtered=acc.filter(function(x){return x.name===currentHistoryName;}).sort(function(a,b){return a.ts-b.ts;});
+  var tSend=0, tReceive=0;
+  for(var i=0;i<filtered.length;i++){ if(filtered[i].type==='diye') tSend+=filtered[i].amount; else tReceive+=filtered[i].amount; }
+  var net=tReceive - tSend;
+  var rows=""; var running=0;
+  for(var i=0;i<filtered.length;i++){
+    var f=filtered[i]; running+= f.type==='liye'?f.amount:-f.amount;
+    var send = f.type==='diye' ? '<span style="color:#ef4444;font-weight:800">-'+f.amount+'</span>' : '-';
+    var receive = f.type==='liye' ? '<span style="color:#16a34a;font-weight:800">+'+f.amount+'</span>' : '-';
+    rows+='<tr><td style="padding:10px;border-bottom:1px solid #f1f5f9">'+(f.date||'')+'</td><td style="padding:10px;border-bottom:1px solid #f1f5f9">'+(f.details||'-')+'</td><td style="padding:10px;text-align:center;border-bottom:1px solid #f1f5f9">'+send+'</td><td style="padding:10px;text-align:center;border-bottom:1px solid #f1f5f9">'+receive+'</td><td style="padding:10px;text-align:center;font-weight:900;border-bottom:1px solid #f1f5f9">'+running+'</td></tr>';
+  }
+
+  var html='<div style="padding:20px;background:#fff;font-family:Poppins,sans-serif">'
+    +'<div style="display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #0f172a;padding-bottom:10px"><div style="font-size:16px;font-weight:900;color:#0f172a">'+currentHistoryName+' - History</div><div style="font-size:14px;font-weight:900;color:'+(net>=0?'#16a34a':'#ef4444')+'">Bal: '+net+'</div></div>'
+    +'<table style="width:100%;border-collapse:collapse;margin-top:12px;font-size:11px"><thead><tr style="background:#0f172a;color:#fff"><th style="padding:9px 6px;text-align:left">DATE</th><th style="padding:9px 6px;text-align:left">DETAILS</th><th style="padding:9px 6px;text-align:center">SEND</th><th style="padding:9px 6px;text-align:center">RECEIVE</th><th style="padding:9px 6px;text-align:center">BAL</th></tr></thead><tbody>'+rows+'</tbody></table>'
+    
+    // YEH HAI NAYA TOTAL - DABBON KI TARAH STYLE
+    +'<div style="margin-top:12px;border-top:2.5px solid #0f172a;padding-top:10px;display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px">'
+    +'<div style="background:#0f172a;color:#fff;border-radius:10px;padding:10px;text-align:center;font-weight:900;font-size:12px;display:flex;align-items:center;justify-content:center">TOTAL</div>'
+    +'<div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:10px;padding:8px;text-align:center"><div style="font-size:7px;color:#ef4444;font-weight:800;letter-spacing:1px">SEND</div><div style="font-size:14px;font-weight:900;color:#ef4444">'+tSend+'</div></div>'
+    +'<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:8px;text-align:center"><div style="font-size:7px;color:#16a34a;font-weight:800;letter-spacing:1px">RECEIVE</div><div style="font-size:14px;font-weight:900;color:#16a34a">'+tReceive+'</div></div>'
+    +'<div style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:10px;padding:8px;text-align:center"><div style="font-size:7px;color:#0f172a;font-weight:800;letter-spacing:1px">BALANCE</div><div style="font-size:14px;font-weight:900;color:#0f172a">'+net+'</div></div>'
+    +'</div></div>';
+
+  await makePdfFromDiv(html, currentHistoryName+'-History.pdf');
 }
 async function downloadBookPDF(){
   try{
