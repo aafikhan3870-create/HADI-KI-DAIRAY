@@ -31,7 +31,7 @@
 .white{padding:0 14px 120px;max-width:480px;margin:0 auto;width:100%;box-sizing:border-box}.card{border:1px solid #f1f5f9;border-radius:18px;padding:12px;background:#fff;margin-top:12px;width:100%;box-sizing:border-box}.btn{width:100%;background:var(--primary);color:#fff;border:none;padding:14px;border-radius:16px;font-weight:800;margin-top:12px;cursor:pointer}
 .note{border:1px solid #f1f5f9;background:#fff;border-radius:16px;padding:18px;margin-top:10px;cursor:pointer;display:flex;justify-content:space-between;align-items:center}.note h4{font-size:16px;font-weight:800}
 .editInput{width:100%;border:2px dashed var(--primary);border-radius:10px;padding:10px;font-size:16px;outline:none}
-.excel-table{width:100%;border-collapse:collapse;table-layout:fixed}.excel-table th{background:#f8fafc;padding:10px 4px;border-bottom:2px solid #e2e8f0;text-align:center;font-size:11px;white-space:nowrap}.excel-table td{padding:12px 4px;border-bottom:1px solid #f1f5f9;text-align:center;font-weight:700;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.excel-table{width:100%;border-collapse:collapse;table-layout:fixed}.excel-table th{background:#f8fafc;padding:10px 4px;border-bottom:2px solid #e2e8f0;text-align:center;font-size:11px;white-space:nowrap}.excel-table td{padding:12px 4px;border-bottom:1px solid #f1f5f9;text-align:center;font-weight:700;font-size:13px;overflow:hidden;text-overflow:ellipsis}
 .historyModal{display:none;position:fixed;inset:0;background:rgba(15,23,42,.75);z-index:10006;align-items:center;justify-content:center;padding:16px}.historyModal.active{display:flex}
 .historyBox{background:#fff;width:100%;max-width:560px;max-height:88vh;overflow:hidden;border-radius:24px;display:flex;flex-direction:column}
 .historyHead{padding:20px;background:#0f172a;color:#fff;display:flex;justify-content:space-between;align-items:center}
@@ -56,10 +56,13 @@
 .delNameBtn{border:none;background:#fff;color:#ef4444;width:28px;height:28px;border-radius:8px;font-weight:800;cursor:pointer;border:1px solid #fee2e2;font-size:12px}
 .accInputWrap{position:relative;margin-top:12px;width:100%;overflow:hidden}.accInputWrap .inputIcon{position:absolute;left:8px;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg, #fef3c7, #fde68a);border:1px solid #fde68a;display:flex;align-items:center;justify-content:center;font-size:16px;z-index:1}
 .accInput{width:100%;height:54px;border:1.5px solid #e2e8f0;border-radius:14px;padding:0 12px 0 52px;font-size:18px;font-weight:800;outline:none;box-sizing:border-box;display:block}
-.accSingleRow{width:100%;margin-top:12px;overflow:visible}.extraInput{width:100%;height:50px;border:1.5px solid #e2e8f0;border-radius:12px;padding:0 10px;font-weight:600;font-size:13px;box-sizing:border-box;background:#f8fafc}
-.accRow2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;width:100%}.accReceive{height:50px;border-radius:12px;border:1.5px solid #bbf7d0;background:linear-gradient(135deg, #f0fdf4, #dcfce7);color:#15803d;font-weight:700;font-size:14px;cursor:pointer}
-.accSend{height:50px;border-radius:12px;border:1.5px solid #fecaca;background:linear-gradient(135deg, #fef2f2, #fee2e2);color:#b91c1c;font-weight:700;font-size:14px;cursor:pointer}
+.accSingleRow{width:100%;margin-top:12px;overflow:visible}
+.extraInput{width:100%;height:50px;border:1.5px solid #e2e8f0;border-radius:12px;padding:0 10px;font-weight:600;font-size:13px;box-sizing:border-box;background:#f8fafc}
+.accDateDetailRow{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px;width:100%}
+.accRow2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;width:100%}.accReceive{height:54px;border-radius:14px;border:2px solid #16a34a;background:#fff;color:#15803d;font-weight:900;font-size:15px;cursor:pointer;transition:0.15s}.accReceive.active{background:linear-gradient(135deg, #16a34a, #22c55e);color:#fff;border-color:#16a34a;box-shadow:0 4px 12px rgba(22,163,74,0.35)}
+.accSend{height:54px;border-radius:14px;border:2px solid #ef4444;background:#fff;color:#b91c1c;font-weight:900;font-size:15px;cursor:pointer;transition:0.15s}.accSend.active{background:linear-gradient(135deg, #ef4444, #f87171);color:#fff;border-color:#ef4444;box-shadow:0 4px 12px rgba(239,68,68,0.35)}
 .accSave{width:100%;height:50px;border-radius:12px;background:linear-gradient(135deg, #0f172a, #1e293b);color:#fff;border:1px solid #0f172a;font-weight:700;font-size:13px;margin-top:10px;cursor:pointer}
+.accMainSave{width:100%;height:54px;border-radius:14px;background:#0f172a;color:#fff;border:none;font-weight:800;font-size:15px;margin-top:12px;cursor:pointer}
 .accStats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:12px;width:100%}.accStatBox{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:10px 2px;text-align:center}.accStatBox small{font-size:9px;color:#64748b;display:block;font-weight:700}.accStatBox b{font-size:16px;display:block;margin-top:2px;font-weight:800;word-break:break-all}
 .bookMainCard{background:linear-gradient(180deg,#ffffff 0%,#f8fafc 100%);border-radius:22px;padding:16px;border:1px solid #e2e8f0;box-shadow:0 12px 24px -12px rgba(0,0,0,0.12);margin-top:12px;width:100%;box-sizing:border-box}
 .bookToggleRow{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
@@ -158,22 +161,22 @@
 </div>
 <span class="fancy-label" style="margin-top:12px">Enter Amount</span>
 <div class="accInputWrap"><span class="inputIcon">💰</span><input id="accAmount" type="number" placeholder="0" class="accInput"></div>
-
-<div class="accSingleRow"><span class="fancy-label">📅 DATE</span><input id="accDate" type="date" class="extraInput" style="height:54px"></div>
-
-<div class="accSingleRow"><span class="fancy-label">📝 DETAILS</span>
+<div class="accDateDetailRow">
+<div><span class="fancy-label">📅 DATE</span><input id="accDate" type="date" class="extraInput" style="height:54px"></div>
+<div><span class="fancy-label">📝 DETAILS</span>
 <div class="name-select-wrap">
-<button id="detailsDropdownBtn" class="name-select-btn" onclick="toggleDetailsDropdown()" style="height:56px">
-<div class="name-left"><div class="name-icon-wrap" style="background:linear-gradient(135deg,#fef3c7,#fde68a);color:#92400e">📝</div><div class="name-text-col"><span class="name-top-small">Detail</span><span id="selectedDetailsText" class="name-main">Choose detail...</span><span id="selectedDetailsSubj" class="name-sub">Tap to select</span></div></div><div class="name-right"><div class="name-arrow">▼</div></div>
+<button id="detailsDropdownBtn" class="name-select-btn" onclick="toggleDetailsDropdown()" style="height:54px">
+<div class="name-left"><div class="name-icon-wrap" style="background:linear-gradient(135deg,#fef3c7,#fde68a);color:#92400e">📝</div><div class="name-text-col"><span class="name-top-small">Detail</span><span id="selectedDetailsText" class="name-main">DETAIL...</span><span id="selectedDetailsSub" class="name-sub">Tap Select</span></div></div><div class="name-right"><div class="name-arrow">▼</div></div>
 </button>
 <div id="detailsDropdown" class="name-dropdown">
-<div class="name-dropdown-header"><input id="newDetailInside" class="name-input-fancy" placeholder="DETAIL..."><button onclick="saveDetailFromInside()" class="name-add-btn">✚ Add</button></div>
+<div class="name-dropdown-header"><input id="newDetailInside" class="name-input-fancy" placeholder="New..."><button onclick="saveDetailFromInside()" class="name-add-btn">✚ Add</button></div>
 <div id="savedDetailsContainer"></div>
 </div>
 </div>
 </div>
-
-<div class="accRow2"><button class="accReceive" onclick="saveDirect('receive')">↓ Receive</button><button class="accSend" onclick="saveDirect('send')">↑ Send</button></div>
+</div>
+<div class="accRow2"><button class="accReceive" onclick="selectAccType('receive')">↓ Receive</button><button class="accSend" onclick="selectAccType('send')">↑ Send</button></div>
+<button class="accMainSave" onclick="doFinalSave()">SAVE</button>
 <button class="accSave" onclick="setView('accountNames')">📒 HISAB - All Names →</button>
 <div class="accStats"><div class="accStatBox"><small>Receive</small><b id="totalLiye" style="color:#16a34a">0</b></div><div class="accStatBox"><small>Send</small><b id="totalDiye" style="color:#ef4444">0</b></div><div class="accStatBox"><small>Balance</small><b id="totalBaqi">0</b></div></div>
 </div>
@@ -186,7 +189,7 @@
 </div>
 <div id="pdfRender" style="position:fixed;left:-9999px;top:0;width:800px;background:#fff;z-index:-1"></div>
 <script>
-var currentFont='f-urdu1';var currentReadId=null;var v='';var generatedCode='';var currentHistoryName='';var settingsCode='';var pendingMobile='';var pendingPass='';var editorLang='ur';var selectedName='';var selectedDetail='';var bookZoom=1;let deferredPrompt=null;var editLedgerId=null;var editLedgerType='diye';var tempThemeColor='#16a34a';
+var currentFont='f-urdu1';var currentReadId=null;var v='';var generatedCode='';var currentHistoryName='';var settingsCode='';var pendingMobile='';var pendingPass='';var editorLang='ur';var selectedName='';var selectedDetail='';var bookZoom=1;let deferredPrompt=null;var editLedgerId=null;var editLedgerType='diye';var tempThemeColor='#16a34a';var lastSaveType='receive';
 function getP(){return localStorage.getItem('myPass');}function getM(){return localStorage.getItem('myMobile');}
 function backToWelcome(){document.getElementById('setup').style.display='none';document.getElementById('welcome').style.display='flex';}
 function openSetup(){var p=getP();document.getElementById('welcome').style.display='none';if(p&&p.length>=4){document.getElementById('lockScreen').style.display='flex';v='';upd();}else{document.getElementById('setup').style.display='flex';}}
@@ -218,8 +221,6 @@ function refreshNameDropdown(){var saved=JSON.parse(localStorage.getItem('savedN
 function toggleNameDropdown(){var dd=document.getElementById('nameDropdown');var dd2=document.getElementById('detailsDropdown');if(dd2) dd2.classList.remove('show');dd.classList.toggle('show');if(dd.classList.contains('show')) refreshNameDropdown();}
 function selectName(name){selectedName=name;var main=document.getElementById('selectedNameText');var sub=document.getElementById('selectedNameSub');if(name==='All'){main.innerText='🌟 ALL - All Names';sub.innerText='Amount...';}else{main.innerText=name;sub.innerText='Selected • Tap to change';}document.getElementById('nameDropdown').classList.remove('show');showToast('Selected: '+name);}
 function deleteName(name){if(!confirm(name+' delete?')) return;var saved=JSON.parse(localStorage.getItem('savedNames')||'[]');saved=saved.filter(function(n){return n!==name});localStorage.setItem('savedNames',JSON.stringify(saved));if(selectedName===name){selectedName='';document.getElementById('selectedNameText').innerText='Choose person...';document.getElementById('selectedNameSub').innerText='Tap to select from list';}refreshNameDropdown();loadAcc();loadAccNames();showToast('Deleted: '+name);}
-
-// DETAILS DROPDOWN - NAME JAISI - KHALI START, AAP KHUD ADD KARO
 function saveDetailFromInside(){
   var n=document.getElementById('newDetailInside').value.trim();
   if(!n){alert('Enter detail!');return;}
@@ -232,7 +233,7 @@ function saveDetailFromInside(){
   showToast('Saved Detail: '+n);
 }
 function refreshDetailsDropdown(){
-  var saved=JSON.parse(localStorage.getItem('savedDetails')||'[]'); // KHALI SE START, ACC SE AUTO ADD NAHI
+  var saved=JSON.parse(localStorage.getItem('savedDetails')||'[]');
   var cont=document.getElementById('savedDetailsContainer');
   if(!cont) return;
   cont.innerHTML='';
@@ -243,14 +244,29 @@ function refreshDetailsDropdown(){
       cont.appendChild(div);
     })(saved[i]);
   }
-  if(saved.length===0) cont.innerHTML='<div style="padding:14px;text-align:center;color:#94a3b8;font-size:12px">No details yet....</div>';
+  if(saved.length===0) cont.innerHTML='<div style="padding:14px;text-align:center;color:#94a3b8;font-size:12px">No details yet..</div>';
 }
 function toggleDetailsDropdown(){var dd=document.getElementById('detailsDropdown');var dd2=document.getElementById('nameDropdown');if(dd2) dd2.classList.remove('show');dd.classList.toggle('show');if(dd.classList.contains('show')) refreshDetailsDropdown();}
-function selectDetail(name){selectedDetail=name;document.getElementById('selectedDetailsText').innerText=name;document.getElementById('selectedDetailsSub').innerText='Selected • Tap to change';document.getElementById('detailsDropdown').classList.remove('show');showToast('Detail: '+name);}
-function deleteDetail(name){if(!confirm(name+' delete?')) return;var saved=JSON.parse(localStorage.getItem('savedDetails')||'[]');saved=saved.filter(function(n){return n!==name});localStorage.setItem('savedDetails',JSON.stringify(saved));if(selectedDetail===name){selectedDetail='';document.getElementById('selectedDetailsText').innerText='Choose detail...';document.getElementById('selectedDetailsSub').innerText='Tap to select';}refreshDetailsDropdown();showToast('Deleted Detail: '+name);}
-
+function selectDetail(name){selectedDetail=name;document.getElementById('selectedDetailsText').innerText=name;document.getElementById('selectedDetailsSub').innerText='Selected';document.getElementById('detailsDropdown').classList.remove('show');showToast('Detail: '+name);}
+function deleteDetail(name){if(!confirm(name+' delete?')) return;var saved=JSON.parse(localStorage.getItem('savedDetails')||'[]');saved=saved.filter(function(n){return n!==name});localStorage.setItem('savedDetails',JSON.stringify(saved));if(selectedDetail===name){selectedDetail='';document.getElementById('selectedDetailsText').innerText='DETAIL...';document.getElementById('selectedDetailsSub').innerText='Tap to select';}refreshDetailsDropdown();showToast('Deleted Detail: '+name);}
 function formatShortDate(d){var m=d.getMonth()+1;var day=d.getDate();var y=String(d.getFullYear()).slice(-2);return m+'/'+day+'/'+y;}
+
+function selectAccType(type){
+  lastSaveType=type;
+  var r=document.querySelector('.accReceive');
+  var s=document.querySelector('.accSend');
+  if(r) r.classList.remove('active');
+  if(s) s.classList.remove('active');
+  if(type==='receive' && r) r.classList.add('active');
+  if(type==='send' && s) s.classList.add('active');
+  showToast(type==='receive' ? 'Receive selected - ab SAVE dabao' : 'Send selected - ab SAVE dabao');
+}
+function doFinalSave(){
+  saveDirect(lastSaveType);
+}
 function saveDirect(type){
+  if(type) lastSaveType=type;
+  else type=lastSaveType;
   if(!selectedName){showToast('Name select karo!');toggleNameDropdown();return;}
   var amVal=document.getElementById('accAmount').value.trim();if(!amVal){alert('Amount likho!');return;}
   var am=parseFloat(amVal);if(isNaN(am)||am<=0){alert('Valid amount!');return;}
@@ -269,12 +285,12 @@ function saveDirect(type){
     localStorage.setItem('acc',JSON.stringify(a));showToast((type==='send'?'Send to ':'Receive from ')+selectedName+': '+am);
   }
   document.getElementById('accAmount').value='';
-  selectedDetail='';document.getElementById('selectedDetailsText').innerText='Choose detail...';document.getElementById('selectedDetailsSub').innerText='Tap to select';
+  selectedDetail='';document.getElementById('selectedDetailsText').innerText='DETAIL...';document.getElementById('selectedDetailsSub').innerText='Tap Select';
   loadAcc();refreshDetailsDropdown();
 }
 function loadAcc(){var lastDate=localStorage.getItem('lastAccDate');if(lastDate){var dateEl=document.getElementById('accDate');if(dateEl && !dateEl.value){dateEl.value=lastDate;}}var a=JSON.parse(localStorage.getItem('acc')||'[]');var liye=0,diye=0;for(var i=0;i<a.length;i++){if(a[i].type==='liye')liye+=a[i].amount;else if(a[i].type==='diye') diye+=a[i].amount;}document.getElementById('totalLiye').innerText=liye;document.getElementById('totalDiye').innerText=diye;document.getElementById('totalBaqi').innerText=liye-diye;}
 function loadAccNames(){var a=JSON.parse(localStorage.getItem('acc')||'[]');var q=(document.getElementById('namesSearch')?document.getElementById('namesSearch').value.trim().toLowerCase():'');var map={};for(var i=0;i<a.length;i++){var x=a[i];if(!map[x.name])map[x.name]=0;map[x.name]+= x.type==='liye'?x.amount:-x.amount;}var saved=JSON.parse(localStorage.getItem('savedNames')||'[]');for(var i=0;i<saved.length;i++) if(map[saved[i]]===undefined) map[saved[i]]=0;var list=document.getElementById('allNamesList');if(!list) return;list.innerHTML='';var names=Object.keys(map);if(q){names=names.filter(function(n){return n.toLowerCase().indexOf(q)>=0;});}var totalAll=0;for(var k=0;k<names.length;k++) totalAll+=map[names[k]];var totalEl=document.getElementById('allNamesTotalVal');if(totalEl) totalEl.innerText=totalAll;if(names.length===0){list.innerHTML='<div style="padding:24px;text-align:center;color:#94a3b8">No names</div>';return;}for(var i=0;i<names.length;i++){var name=names[i];var bal=map[name];var div=document.createElement('div');div.style.cssText='display:flex;padding:14px 14px;border-bottom:1px solid #f1f5f9;cursor:pointer;align-items:center;background:#fff;box-sizing:border-box';(function(n){div.onclick=function(){openHistory(n);}})(name);var col=bal>=0?'#16a34a':'#ef4444';div.innerHTML='<div style="flex:1.5;font-weight:700;font-size:14px;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'+name+'</div><div style="flex:1;text-align:right;font-weight:800;color:'+col+';font-size:14px;min-width:0">'+bal+'</div>';list.appendChild(div);}}
-function openHistory(name){currentHistoryName=name;var a=JSON.parse(localStorage.getItem('acc')||'[]');var filtered=a.filter(function(x){return x.name===name;}).sort(function(a,b){return a.ts-b.ts;});var tbody=document.querySelector('#historyTable tbody');tbody.innerHTML='';var bal=0;var tSend=0;var tReceive=0;function shortDate(ts,fallback){if(ts){var d=new Date(ts);return (d.getMonth()+1)+'/'+d.getDate()+'/'+String(d.getFullYear()).slice(-2);}if(fallback){var p=fallback.split('/');if(p.length===3){return p[0]+'/'+p[1]+'/'+String(p[2]).slice(-2);}return fallback;}return formatShortDate(new Date());}for(var i=0;i<filtered.length;i++){if(filtered[i].type==='diye') tSend+=filtered[i].amount;else tReceive+=filtered[i].amount;bal+= filtered[i].type==='liye'?filtered[i].amount:-filtered[i].amount;var tr=document.createElement('tr');tr.style.cursor='pointer';(function(id){tr.onclick=function(){editLedgerEntry(id);}})(filtered[i].id);var dateStr=shortDate(filtered[i].ts,filtered[i].date);var detStr=filtered[i].details||'-';if(detStr.length>15) detStr=detStr.substring(0,15)+'..';var sendHtml='';var receiveHtml='';if(filtered[i].type==='diye'){sendHtml='<span class="t-send">-'+filtered[i].amount+'</span>';receiveHtml='<span style="color:#cbd5e1">-</span>';}else{receiveHtml='<span class="t-receive">+'+filtered[i].amount+'</span>';sendHtml='<span style="color:#cbd5e1">-</span>';}tr.innerHTML='<td>'+dateStr+'</td><td style="font-size:11px">'+detStr+'</td><td>'+sendHtml+'</td><td>'+receiveHtml+'</td><td style="font-weight:900">'+bal+'</td>';tbody.appendChild(tr);}document.getElementById('historyName').innerText=name+' - History';document.getElementById('hTotalSend').innerText=tSend;document.getElementById('hTotalReceive').innerText=tReceive;document.getElementById('hTotalBal').innerText=bal;document.getElementById('historyModal').classList.add('active');}
+function openHistory(name){currentHistoryName=name;var a=JSON.parse(localStorage.getItem('acc')||'[]');var filtered=a.filter(function(x){return x.name===name;}).sort(function(a,b){return a.ts-b.ts;});var tbody=document.querySelector('#historyTable tbody');tbody.innerHTML='';var bal=0;var tSend=0;var tReceive=0;function shortDate(ts,fallback){if(ts){var d=new Date(ts);return (d.getMonth()+1)+'/'+d.getDate()+'/'+String(d.getFullYear()).slice(-2);}if(fallback){var p=fallback.split('/');if(p.length===3){return p[0]+'/'+p[1]+'/'+String(p[2]).slice(-2);}return fallback;}return formatShortDate(new Date());}for(var i=0;i<filtered.length;i++){if(filtered[i].type==='diye') tSend+=filtered[i].amount;else tReceive+=filtered[i].amount;bal+= filtered[i].type==='liye'?filtered[i].amount:-filtered[i].amount;var tr=document.createElement('tr');tr.style.cursor='pointer';(function(id){tr.onclick=function(){editLedgerEntry(id);}})(filtered[i].id);var dateStr=shortDate(filtered[i].ts,filtered[i].date);var detStr=filtered[i].details||'-';if(detStr.length>15) detStr=detStr.substring(0,15)+'..';var sendHtml='';var receiveHtml='';if(filtered[i].type==='diye'){sendHtml='<span class="t-send">-'+filtered[i].amount+'</span>';receiveHtml='<span style="color:#cbd5e1">-</span>';}else{receiveHtml='<span class="t-receive">+'+filtered[i].amount+'</span>';sendHtml='<span style="color:#cbd5e1">-</span>';}tr.innerHTML='<td>'+dateStr+'</td><td style="font-size:11px;white-space:normal;word-break:break-word">'+detStr+'</td><td>'+sendHtml+'</td><td>'+receiveHtml+'</td><td style="font-weight:900">'+bal+'</td>';tbody.appendChild(tr);}document.getElementById('historyName').innerText=name+' - History';document.getElementById('hTotalSend').innerText=tSend;document.getElementById('hTotalReceive').innerText=tReceive;document.getElementById('hTotalBal').innerText=bal;document.getElementById('historyModal').classList.add('active');}
 function editLedgerEntry(id){var a=JSON.parse(localStorage.getItem('acc')||'[]');var found=null;for(var i=0;i<a.length;i++) if(a[i].id===id){found=a[i];break;}if(!found) return;editLedgerId=id;editLedgerType=found.type;document.getElementById('editLedgerAmount').value=found.amount;document.getElementById('editLedgerDetails').value=found.details||'';if(found.ts){var d=new Date(found.ts);var yyyy=d.getFullYear();var mm=String(d.getMonth()+1).padStart(2,'0');var dd=String(d.getDate()).padStart(2,'0');document.getElementById('editLedgerDate').value=yyyy+'-'+mm+'-'+dd;}setEditType(found.type);document.getElementById('editLedgerModal').classList.add('active');}
 function setEditType(t){editLedgerType=t;var s=document.getElementById('editTypeSend');var r=document.getElementById('editTypeReceive');if(t==='diye'){s.style.background='#ef4444';s.style.color='#fff';r.style.background='#f0fdf4';r.style.color='#15803d';}else{r.style.background='#16a34a';r.style.color='#fff';s.style.background='#fef2f2';s.style.color='#b91c1c';}}
 function saveLedgerEdit(){if(!editLedgerId) return;var newAmount=parseFloat(document.getElementById('editLedgerAmount').value);if(isNaN(newAmount)||newAmount<=0){alert('Valid amount!');return;}var newDateStr=document.getElementById('editLedgerDate').value;var newDetails=document.getElementById('editLedgerDetails').value.trim();var a=JSON.parse(localStorage.getItem('acc')||'[]');for(var i=0;i<a.length;i++) if(a[i].id===editLedgerId){a[i].amount=newAmount;a[i].type=editLedgerType;a[i].details=newDetails;if(newDateStr){var d=new Date(newDateStr);a[i].ts=d.getTime();a[i].date=formatShortDate(d);}break;}localStorage.setItem('acc',JSON.stringify(a));document.getElementById('editLedgerModal').classList.remove('active');openHistory(currentHistoryName);loadAcc();loadAccNames();showToast('Updated!');}
@@ -314,38 +330,172 @@ async function downloadAllNamesPDF(){
     var bal=map[k]; var color=bal>=0?'#16a34a':'#ef4444'; var bg=i%2==0?'#ffffff':'#f8fafc'; var icon=bal>=0?'🟢':'🔴';
     rows+='<tr style="background:'+bg+'"><td style="padding:13px 16px;border:1px solid #e2e8f0;font-weight:700">'+icon+' '+k+'</td><td style="padding:13px 16px;border:1px solid #e2e8f0;text-align:center;font-weight:900;color:'+color+';background:'+(bal>=0?'#f0fdf4':'#fef2f2')+'">'+bal+'</td></tr>';
   });
-  var html='<div style="border:3px solid #0f172a;border-radius:18px;overflow:hidden;background:#fff"><div style="background:linear-gradient(135deg,#0f172a 0%, #16a34a 50%, #22c55e 100%);color:#fff;padding:22px 26px;display:flex;justify-content:space-between;align-items:center"><div><h1 style="margin:0;font-size:24px">📒 HISAB - All Names</h1><p style="margin:8px 0 0;opacity:.95;font-size:12px;background:rgba(255,255,255,0.15);padding:6px 12px;border-radius:20px;display:inline-block">Date: '+new Date().toLocaleDateString()+' | Total: Rs '+total+'</p></div><div style="width:60px;height:60px;border-radius:50%;background:#fff;color:#0f172a;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:20px">AH</div></div><div style="padding:18px;background:#f8fafc"><table style="width:100%;border-collapse:collapse;border-radius:14px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,0.08);border:2px solid #0f172a"><thead><tr style="background:#0f172a;color:#fff"><th style="padding:15px 16px;text-align:left">👤 NAME</th><th style="padding:15px 16px;text-align:center">💰 BALANCE</th></tr></thead><tbody>'+rows+'<tr style="background:linear-gradient(135deg,#0f172a,#16a34a);color:#fff;font-weight:900"><td style="padding:16px">🔥 TOTAL</td><td style="padding:16px;text-align:center;background:#22c55e">Rs '+total+'</td></tr></tbody></table></div></div>';
-  await makePdfFromDiv(html,'HISAB_FANCY.pdf');
+  var html='<div style="padding:20px"><h1 style="text-align:center;font-weight:900">HADI KI DAIRAY - HISAB</h1><table style="width:100%;border-collapse:collapse;margin-top:16px"><tr style="background:#0f172a;color:#fff"><th style="padding:12px;text-align:left">Name</th><th style="padding:12px;text-align:right">Balance</th></tr>'+rows+'<tr style="background:#f8fafc;font-weight:900"><td style="padding:12px;border-top:2px solid #0f172a">Total</td><td style="padding:12px;text-align:right;border-top:2px solid #0f172a">'+total+'</td></tr></table></div>';
+  await makePdfFromDiv(html,'HISAB-All-Names.pdf');
 }
 async function downloadPersonPDF(){
-  var acc=JSON.parse(localStorage.getItem('acc')||'[]').filter(function(x){return x.name===currentHistoryName;}).sort(function(a,b){return a.ts-b.ts;});
-  var bal=0, tSend=0, tRec=0; var rows='';
-  for(var i=0;i<acc.length;i++){ bal+= acc[i].type==='liye'?acc[i].amount:-acc[i].amount; if(acc[i].type==='diye') tSend+=acc[i].amount; else tRec+=acc[i].amount; var bg=i%2==0?'#fff':'#f8fafc'; rows+='<tr style="background:'+bg+'"><td style="padding:11px;border:1px solid #e2e8f0;font-size:12px;text-align:center">'+(acc[i].date||'')+'</td><td style="padding:11px;border:1px solid #e2e8f0;font-size:12px">'+(acc[i].details||'-')+'</td><td style="padding:11px;border:1px solid #e2e8f0;text-align:center">'+(acc[i].type==='diye'?'<span style="background:#fef2f2;color:#ef4444;padding:5px 10px;border-radius:20px;font-weight:800">-'+acc[i].amount+'</span>':'-')+'</td><td style="padding:11px;border:1px solid #e2e8f0;text-align:center">'+(acc[i].type==='liye'?'<span style="background:#f0fdf4;color:#16a34a;padding:5px 10px;border-radius:20px;font-weight:800">+'+acc[i].amount+'</span>':'-')+'</td><td style="padding:11px;border:1px solid #e2e8f0;text-align:center;font-weight:900">'+bal+'</td></tr>';}
-  var html='<div style="border:3px solid #0f172a;border-radius:18px;overflow:hidden"><div style="background:linear-gradient(135deg,#0f172a 0%, #16a34a 100%);color:#fff;padding:20px 24px"><h2 style="margin:0">📒 '+currentHistoryName+'</h2><p style="margin:6px 0 0;opacity:.8">Send:'+tSend+' | Receive:'+tRec+' | Bal:'+bal+'</p></div><div style="padding:16px"><table style="width:100%;border-collapse:collapse;border:2px solid #0f172a"><thead><tr style="background:#0f172a;color:#fff"><th style="padding:10px;border:1px solid #000">DATE</th><th style="padding:10px;border:1px solid #000">DETAILS</th><th style="padding:10px;border:1px solid #000">SEND</th><th style="padding:10px;border:1px solid #000">RECEIVE</th><th style="padding:10px;border:1px solid #000">BAL</th></tr></thead><tbody>'+rows+'<tr style="background:#0f172a;color:#fff;font-weight:900"><td colspan="2" style="padding:12px;text-align:center">TOTAL</td><td style="padding:12px;text-align:center;background:#ef4444">'+tSend+'</td><td style="padding:12px;text-align:center;background:#16a34a">'+tRec+'</td><td style="padding:12px;text-align:center;background:#fff;color:#0f172a">'+bal+'</td></tr></tbody></table></div></div>';
-  await makePdfFromDiv(html, currentHistoryName+'_FANCY.pdf');
+  var name=currentHistoryName; var acc=JSON.parse(localStorage.getItem('acc')||'[]').filter(x=>x.name===name).sort((a,b)=>a.ts-b.ts);
+  var bal=0; var rows=''; for(var i=0;i<acc.length;i++){ bal+= acc[i].type==='liye'?acc[i].amount:-acc[i].amount; var d=new Date(acc[i].ts); var dateStr=(d.getMonth()+1)+'/'+d.getDate()+'/'+String(d.getFullYear()).slice(-2); rows+='<tr><td style="padding:8px;border:1px solid #e2e8f0;text-align:center">'+dateStr+'</td><td style="padding:8px;border:1px solid #e2e8f0">'+(acc[i].details||'-')+'</td><td style="padding:8px;border:1px solid #e2e8f0;text-align:center;color:'+(acc[i].type==='diye'?'#ef4444':'#cbd5e1')+'">'+(acc[i].type==='diye'?acc[i].amount:'-')+'</td><td style="padding:8px;border:1px solid #e2e8f0;text-align:center;color:'+(acc[i].type==='liye'?'#16a34a':'#cbd5e1')+'">'+(acc[i].type==='liye'?acc[i].amount:'-')+'</td><td style="padding:8px;border:1px solid #e2e8f0;text-align:center;font-weight:900">'+bal+'</td></tr>'; }
+  var html='<div style="padding:20px"><h2 style="text-align:center">'+name+' - History</h2><table style="width:100%;border-collapse:collapse;margin-top:12px"><tr style="background:#f8fafc"><th style="padding:8px;border:1px solid #e2e8f0">DATE</th><th style="padding:8px;border:1px solid #e2e8f0">DETAILS</th><th style="padding:8px;border:1px solid #e2e8f0">SEND</th><th style="padding:8px;border:1px solid #e2e8f0">RECEIVE</th><th style="padding:8px;border:1px solid #e2e8f0">BAL</th></tr>'+rows+'</table></div>';
+  await makePdfFromDiv(html, name+'-History.pdf');
 }
-async function downloadBookPDF(){ var a=JSON.parse(localStorage.getItem('y')||'[]'); var y=null; for(var i=0;i<a.length;i++) if(a[i].id===currentReadId){y=a[i];break;} if(!y)return; var html='<div style="border:4px solid #0f172a;border-radius:20px;overflow:hidden"><div style="background:linear-gradient(135deg,#0f172a,#16a34a);color:#fff;padding:22px"><h1>HADI KI DAIRAY</h1><p>'+y.date+'</p></div><div style="padding:28px"><h2 style="font-family:'+(y.font||'Jameel Noori')+',serif;direction:rtl;text-align:right;font-size:28px">'+y.heading+'</h2><div style="margin-top:20px;font-family:'+(y.font||'Jameel Noori')+',serif;direction:rtl;text-align:right;font-size:24px;white-space:pre-wrap">'+y.text+'</div></div></div>'; await makePdfFromDiv(html,(y.heading||'diary')+'.pdf');}
-function pickRainbowColor(e){document.getElementById('hiddenColorPicker').click();}function setRainbowFromPicker(color){tempThemeColor=color;document.documentElement.style.setProperty('--primary',color);var prev=document.getElementById('rainbowPreview');if(prev) prev.style.background=color;var hex=document.getElementById('rainbowHex');if(hex) hex.innerText='Selected: '+color+' → Save dabao';var txt=document.getElementById('currentColorText');if(txt) txt.innerText='Selected: '+color;showToast('Rainbow Color: '+color);}
-function saveThemeRainbow(){localStorage.setItem('themeColor', tempThemeColor);document.documentElement.style.setProperty('--primary', tempThemeColor);showToast('Theme Saved: '+tempThemeColor+' ✓');setView('home');}
-(function(){
-  var saved=localStorage.getItem('themeColor');if(saved){document.documentElement.style.setProperty('--primary',saved);tempThemeColor=saved;var prev=document.getElementById('rainbowPreview');if(prev) prev.style.background=saved;var hex=document.getElementById('rainbowHex');if(hex) hex.innerText='Current: '+saved;}
-  var sf=localStorage.getItem('selFont');if(sf) currentFont=sf;
-})();
-function lockK(){document.getElementById('lockScreen').style.display='flex';v='';upd();}
-window.addEventListener('beforeinstallprompt',(e)=>{e.preventDefault();deferredPrompt=e;});
-function triggerInstall(){if(deferredPrompt){deferredPrompt.prompt();deferredPrompt.userChoice.then((r)=>{if(r.outcome==='accepted'){showToast('Installing...');}else{showToast('Cancelled');}deferredPrompt=null;});}else{if(window.matchMedia('(display-mode: standalone)').matches){showToast('Already installed ✓');}else{alert('INSTALL: 3 dot > Add to Home Screen');}}}
-window.addEventListener('appinstalled',()=>{deferredPrompt=null;showToast('Installed ✓');});
-if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('sw.js').then(()=>console.log('SW ok')).catch(()=>{});});}
-document.addEventListener('click',function(e){
-  var wraps=document.querySelectorAll('.name-select-wrap');
-  var inside=false; wraps.forEach(function(w){if(w.contains(e.target)) inside=true;});
-  if(!inside){
-    var dd=document.getElementById('nameDropdown');if(dd) dd.classList.remove('show');
-    var dd2=document.getElementById('detailsDropdown');if(dd2) dd2.classList.remove('show');
+async function downloadBookPDF(){
+  try{
+    var headEl=document.getElementById('readHeadView');
+    var textEl=document.getElementById('readTextView');
+    var head=headEl ? headEl.innerText.trim() : 'خوابوں کی کہانی';
+    var text=textEl ? textEl.innerText : '';
+    var fontClass=textEl ? textEl.className : 'f-urdu1';
+    
+    showToast('Download PDF...');
+    
+    // Logo - yahan apna logo ka link lagao
+    var LOGO_URL = 'https://i.ibb.co/your-logo.png'; // <-- apna logo yahan dalo
+    // Agar logo nahi to ye khali chor do, main neeche text logo laga diya hai
+    
+    var tempDiv=document.createElement('div');
+    tempDiv.style.cssText='position:fixed;left:-9999px;top:0;width:540px;font-size:18px;line-height:2.2;padding:0;visibility:hidden;white-space:pre-wrap;overflow-wrap:break-word;word-break:break-word;';
+    tempDiv.className=fontClass;
+    document.body.appendChild(tempDiv);
+    
+    var paras=text.split('\n');
+    var pages=[]; var cur='';
+    for(var i=0;i<paras.length;i++){
+      var line=paras[i]; // bilkul same line rakho, trim nahi
+      var test=cur ? cur+'\n'+line : line;
+      tempDiv.innerText=test;
+      if(tempDiv.scrollHeight>820 && cur){
+        pages.push(cur); cur=line;
+      }else{cur=test;}
+    }
+    if(cur) pages.push(cur);
+    document.body.removeChild(tempDiv);
+    
+    var pdf=new jspdf.jsPDF('p','mm','a4');
+    var pageW=pdf.internal.pageSize.getWidth();
+    var pageH=pdf.internal.pageSize.getHeight();
+    var render=document.getElementById('pdfRender');
+    
+    for(var pIdx=0;pIdx<pages.length;pIdx++){
+      if(pIdx>0) pdf.addPage();
+      render.innerHTML='';
+      
+      var wrap=document.createElement('div');
+      wrap.id='pdfInner';
+      // Tasveer jaisa cream paper + golden border
+      wrap.style.cssText='width:650px;min-height:1050px;background:#FFFECC;border:5px solid #E6C54A;box-sizing:border-box;padding:0;overflow:hidden;position:relative;';
+      
+      // Andar white cream
+      var inner=document.createElement('div');
+      inner.style.cssText='padding:22px 26px 20px 26px;';
+      
+      // Logo + HADI KI DAIRAY - top pe chota
+      var topBar=document.createElement('div');
+      topBar.style.cssText='display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;';
+      
+      var logoBox=document.createElement('div');
+      // Agar aap ka logo image hai to yahan ayega
+      logoBox.style.cssText='font-family:Poppins,sans-serif;font-weight:900;font-size:11px;color:#8B7500;background:#FFF4B0;border:1px solid #E6C54A;padding:4px 10px;border-radius:20px;';
+      logoBox.innerText='HADI KI DAIRAY';
+      
+      // Logo image agar ho to
+      // var logoImg=document.createElement('img');
+      // logoImg.src=LOGO_URL;
+      // logoImg.style.cssText='width:50px;height:50px;object-fit:contain;';
+      
+      var pageNum=document.createElement('div');
+      pageNum.style.cssText='font-size:10px;color:#8B7500;font-family:Poppins;';
+      pageNum.innerText=(pIdx+1)+'/'+pages.length;
+      
+      topBar.appendChild(logoBox);
+      topBar.appendChild(pageNum);
+      inner.appendChild(topBar);
+      
+      if(pIdx===0){
+        var headTitle=document.createElement('div');
+        headTitle.className=fontClass;
+        // Bilkul tasveer jaisa laal heading center me
+        headTitle.style.cssText='font-size:32px;font-weight:900;color:#C00000;text-align:center;margin:0 0 28px 0;line-height:1.4;';
+        headTitle.innerText=head;
+        inner.appendChild(headTitle);
+      }
+      
+      var p=document.createElement('p');
+      p.className=fontClass;
+      // Bilkul tasveer jaisa saaf kaala lafz, lines same
+      p.style.cssText='font-size:17px;line-height:2.2;color:#000000;white-space:pre-wrap;text-align:justify;direction:rtl;margin:0;overflow-wrap:break-word;word-break:break-word;max-width:100%;font-weight:500;';
+      p.innerText=pages[pIdx];
+      inner.appendChild(p);
+      
+      wrap.appendChild(inner);
+      render.appendChild(wrap);
+      
+      if(document.fonts) await document.fonts.ready;
+      await new Promise(function(r){setTimeout(r,600);});
+      
+      var canvas=await html2canvas(wrap,{scale:2.5,useCORS:true,backgroundColor:'#FFFECC'});
+      var imgData=canvas.toDataURL('image/jpeg',0.95);
+      pdf.addImage(imgData,'JPEG',0,0,pageW,pageH);
+      render.innerHTML='';
+    }
+    
+    pdf.save(head+'.pdf');
+    showToast('PDF Done! ✅');
+    
+  }catch(e){
+    console.error(e);
+    showToast('Error:'+e.message);
+    var r=document.getElementById('pdfRender');
+    if(r) r.innerHTML='';
   }
-  var uWrap=document.getElementById('urduFontWrap');if(uWrap && !uWrap.contains(e.target)){var ul=document.getElementById('urduFontList');if(ul) ul.classList.remove('show');}
-  var eWrap=document.getElementById('engFontWrap');if(eWrap && !eWrap.contains(e.target)){var el=document.getElementById('engFontList');if(el) el.classList.remove('show');}
+}
+function lockK(){document.getElementById('lockScreen').style.display='flex';v='';upd();}
+function triggerInstall(){if(deferredPrompt){deferredPrompt.prompt();}else{alert('Install: Browser menu > Add to Home Screen');}}
+function pickRainbowColor(e){document.getElementById('hiddenColorPicker').click();}
+function setRainbowFromPicker(val){tempThemeColor=val;document.getElementById('rainbowPreview').style.background=val;document.getElementById('rainbowHex').innerText='Current: '+val;document.documentElement.style.setProperty('--primary',val);}
+function saveThemeRainbow(){document.documentElement.style.setProperty('--primary',tempThemeColor);localStorage.setItem('themeColor',tempThemeColor);showToast('Theme Saved: '+tempThemeColor);}
+window.addEventListener('beforeinstallprompt',(e)=>{e.preventDefault();deferredPrompt=e;});
+document.addEventListener('DOMContentLoaded',function(){
+  var savedFont=localStorage.getItem('selFont'); if(savedFont) currentFont=savedFont;
+  var tc=localStorage.getItem('themeColor'); if(tc){tempThemeColor=tc;document.documentElement.style.setProperty('--primary',tc); var rp=document.getElementById('rainbowPreview'); if(rp) rp.style.background=tc; var rh=document.getElementById('rainbowHex'); if(rh) rh.innerText='Current: '+tc;}
+  applyFont();
+  var amtEl=document.getElementById('accAmount');
+  if(amtEl){
+    amtEl.addEventListener('keydown',function(e){
+      if(e.key==='Enter'){
+        e.preventDefault();
+        saveDirect();
+      }
+    });
+  }
+  var detailEl=document.getElementById('newDetailInside');
+  if(detailEl){
+    detailEl.addEventListener('keydown',function(e){
+      if(e.key==='Enter'){
+        e.preventDefault();
+        saveDetailFromInside();
+      }
+    });
+  }
+  loadY(); loadAcc(); selectAccType('receive');
 });
-</script>
-</body>
-</html>
+function makeReadViewStylish(){
+  var h=document.getElementById('readHeadView');
+  var t=document.getElementById('readTextView');
+  if(!h||!t) return;
+  h.style.fontSize='28px';
+  h.style.fontWeight='900';
+  h.style.textAlign='center';
+  t.style.fontSize='20px';
+  t.style.lineHeight='2';
+  t.style.padding='24px 20px';
+  t.style.margin='10px';
+  t.style.borderLeft='5px solid #16a34a';
+  t.style.borderRight='5px solid #16a34a';
+  t.style.borderRadius='10px';
+  t.style.wordBreak='break-word';
+}
+
+// Auto chal jaye ga
+setInterval(makeReadViewStylish, 1000);
+</script></body></html>
